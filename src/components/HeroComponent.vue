@@ -14,7 +14,7 @@
         type="email"
         name="email"
         id="email"
-        placeholder="Enter your email address"
+        placeholder="Enter your email"
       />
       <button class="button button--green">Get started</button>
     </div>
@@ -48,8 +48,14 @@
   font-family: $fontFamily;
   width: 100%;
   height: 100%;
-  background: url("../assets/images/Star.svg") no-repeat;
-  background-position: 80% 80%;
+  background: url("../assets/images/background-img/Star 5.svg") no-repeat,
+    url("../assets/images/background-img/currency.svg") no-repeat,
+    url("../assets/images/background-img/Ellipse1.svg") no-repeat,
+    url("../assets/images/background-img/money-bag.svg") no-repeat,
+    url("../assets/images/background-img/tabler_currency.svg") no-repeat,
+    url("../assets/images/background-img/Star.svg") no-repeat;
+  background-position: 5% 30%, 0% 65%, 25% 75%, 80% 10%, 99% 35%, 85% 75%;
+
   @media screen and (max-width: $tablet) {
     gap: 1rem;
     padding: 4rem 1rem;
@@ -97,6 +103,7 @@
     flex-direction: row;
     padding: 30px;
     max-width: 900px;
+    margin-bottom: 60px;
     @media screen and (max-width: 500px) {
       padding: 0;
       flex-direction: column;
@@ -122,17 +129,8 @@
     }
     img {
       width: 150px;
-      @media screen and (max-width: $tablet) {
-        //width: 15%;
-      }
-      @media screen and (max-width: $mobile) {
-        //width: 25%;
-      }
     }
   }
-}
-.input {
-  // .input
 }
 
 .button {

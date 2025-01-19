@@ -1,5 +1,5 @@
 <template>
-  <header class="header">
+  <header class="header" :class="{ 'is-hidden': isHeaderHidden }">
     <div class="header__component">
       <div class="header__logo">
         <a href="#">FarmVest</a>
@@ -38,10 +38,13 @@
 </template>
 
 <script setup>
-import { ref, onUnmounted } from "vue";
+import { ref, onUnmounted, onMounted } from "vue";
 
 // Reactive state for sidebar visibility
 const sidebarVisible = ref(false);
+
+// Reactive state for header visibility
+const isHeaderHidden = ref(false);
 
 // Method to toggle sidebar visibility
 function showSidebar() {
@@ -53,6 +56,26 @@ function showSidebar() {
     document.body.classList.remove("no-scroll");
   }
 }
+
+// Scroll detection logic to hide or show the header
+let lastScrollTop = 0;
+function handleScroll() {
+  const currentScrollTop =
+    window.pageYOffset || document.documentElement.scrollTop;
+
+  // Hide header when scrolling down, show when scrolling up
+  if (currentScrollTop > lastScrollTop) {
+    isHeaderHidden.value = true; // Hide header
+  } else {
+    isHeaderHidden.value = false; // Show header
+  }
+
+  lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; // Prevent negative scroll
+}
+// Add scroll event listener on mounted
+onMounted(() => {
+  window.addEventListener("scroll", handleScroll);
+});
 // Cleanup on unmount
 onUnmounted(() => {
   document.body.classList.remove("no-scroll");
@@ -68,9 +91,10 @@ onUnmounted(() => {
   z-index: 50;
   font-family: "Lato", serif;
   width: 100%;
-
+  padding: 20px 0;
+  transition: transform 0.3s ease-in-out;
   @media (min-width: 1250px) {
-    padding: 0 10%;
+    padding: 20px 10%;
   }
   // .header__container
 
@@ -123,6 +147,9 @@ onUnmounted(() => {
       padding-top: 15px;
     }
   }
+}
+.header.is-hidden {
+  transform: translateY(-100%); /* Hide header by moving it off-screen */
 }
 .menu {
   //.menu__icon
