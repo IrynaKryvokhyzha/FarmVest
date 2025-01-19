@@ -47,7 +47,7 @@
   gap: 2rem;
   font-family: $fontFamily;
   width: 100%;
-  height: 100%;
+  height: 100svh;
   background: url("../assets/images/background-img/Star 5.svg") no-repeat,
     url("../assets/images/background-img/currency.svg") no-repeat,
     url("../assets/images/background-img/Ellipse1.svg") no-repeat,
@@ -64,6 +64,7 @@
   @media screen and (max-width: $mobile) {
     gap: 0.8rem;
     padding: 4rem 0;
+    background: none;
   }
   // .hero__container
 
