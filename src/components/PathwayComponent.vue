@@ -111,7 +111,7 @@ const items = ref([
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 10px;
+
   @media screen and (max-width: $mobile) {
     background: none;
     padding: 0;
@@ -120,12 +120,11 @@ const items = ref([
     max-width: 90%;
     max-height: 600px;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 20px;
     @media screen and (max-width: $mobile) {
       max-width: 100%;
       height: 100%;
-      padding-left: 0;
-      padding-right: 0;
+      border-radius: 0;
     }
   }
 }
@@ -133,6 +132,7 @@ const items = ref([
 }
 .content {
   flex: 1 1 50%;
+  padding: 0 1rem;
 
   // .content__title
 

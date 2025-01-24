@@ -28,7 +28,7 @@ $minWidth: 320px;
 // Ширина полотна (макету)
 $maxWidth: 1420px;
 // Ширина обмежуючого контейнера (0 = немає обмеження)
-$maxWidthContainer: 1200px;
+$maxWidthContainer: 1400px;
 // Загальний відступ у контейнера
 // (30 = по 15px ліворуч і праворуч, 0 = немає відступу)
 $containerPadding: 30px;
@@ -113,10 +113,7 @@ body {
   min-height: 100vh;
   line-height: 1;
   color: $primaryColor;
-  position: relative;
   font-family: $fontFamily;
-
-  overflow-x: hidden;
 }
 
 // Оболонка wrapper ==========================================================
@@ -156,8 +153,8 @@ body {
 [class*="__container"] {
   max-width: $maxWidthContainer;
   margin: 0 auto;
-  padding-left: 5.93rem; /* 95/16 */
-  padding-right: 5.18rem; /* 83/16 */
+  padding-left: 30px; /* 95/16 */
+  padding-right: 30px; /* 83/16 */
 }
 
 // Стилі для чуйних картинок (IBG)

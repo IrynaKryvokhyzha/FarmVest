@@ -9,7 +9,6 @@
     &:hover {
       background-color: $secondaryColor;
       border-color: $secondaryColor;
-
       color: #fff;
     }
   }
@@ -38,15 +37,23 @@
 }
 
 .title {
-  font-size: 3.37rem; /* 54/16 */
-  color: #603809;
+  font-size: 388.888889%; /* 70/18 */
+  color: $primaryColor;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.1;
+  align-items: start;
+  @media screen and (max-width: $tablet) {
+    font-size: 50px;
+  }
+  @media screen and (max-width: 670px) {
+    font-size: 40px;
+  }
 }
 .paragraph {
   align-items: start;
-  line-height: 180%;
+  line-height: 177%;
   letter-spacing: 0.2px;
+  padding-bottom: 30px;
   @media screen and (max-width: $mobile) {
     font-size: 1.2rem;
     line-height: 120%;
@@ -61,4 +68,7 @@ input {
   z-index: 5;
   @media (any-hover: hover) {
   }
+}
+span {
+  color: $secondaryColor;
 }

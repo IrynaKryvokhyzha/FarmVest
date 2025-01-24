@@ -50,6 +50,7 @@ const reviews = ref([
 @use "../assets/styles/common-styles/container.scss" as *;
 @use "../assets/styles/common-styles/common.scss" as *;
 .customers {
+  margin-bottom: 20px;
   // .customers__container
 
   &__container {
@@ -65,6 +66,7 @@ const reviews = ref([
   }
 }
 .title {
+  padding: 0 1rem;
   @media screen and (max-width: 1085px) {
     font-size: 56px;
   }
@@ -76,6 +78,7 @@ const reviews = ref([
   }
 }
 .paragraph {
+  padding: 0 1rem;
   max-width: 550px;
   @media screen and (max-width: $tablet) {
     padding-bottom: 0.5rem;
@@ -121,6 +124,10 @@ const reviews = ref([
     min-width: 200px;
     padding: 1rem 1rem;
   }
+  @media screen and (max-width: $mobile) {
+    font-size: 20px;
+    line-height: 1;
+  }
   @media screen and (max-width: 450px) {
     border-radius: 0 0 20px 20px;
   }
@@ -146,6 +153,9 @@ const reviews = ref([
 }
 .reviews-paragraph {
   line-height: 1.8;
+  @media screen and (max-width: $mobile) {
+    line-height: 1.3;
+  }
 }
 .button {
   // .button--green

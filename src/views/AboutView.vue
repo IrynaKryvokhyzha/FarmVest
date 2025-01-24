@@ -1,15 +1,18 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+  <section class="about">
+    <PathwayComponentVue />
+  </section>
 </template>
 
-<style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
+<script setup>
+import PathwayComponentVue from "../components/PathwayComponent.vue";
+</script>
 
-    align-items: center;
-  }
+<style lang="scss" scoped>
+.about {
+  padding: 9rem 1rem;
+  min-height: 100vh;
+
+  align-items: center;
 }
 </style>

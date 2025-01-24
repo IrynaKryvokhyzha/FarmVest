@@ -20,7 +20,7 @@ import HeaderComponent from "./components/HeaderComponent.vue";
   color: #2c3e50;
 }
 .app-container {
-  padding: 10px 20px;
+  //padding: 10px 20px;
 }
 nav {
   display: flex;

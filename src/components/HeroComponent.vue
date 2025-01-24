@@ -1,6 +1,6 @@
 <template>
   <section class="hero__container hero">
-    <h1 class="hero__title">
+    <h1 class="hero__title title">
       The easiest and fastest way to <span>Invest</span> in Agriculture
     </h1>
     <p class="hero__paragraph paragraph">
@@ -38,8 +38,8 @@
 
 <style lang="scss" scoped>
 @use "../assets/styles/common-styles/container.scss" as *;
+@use "../assets/styles/common-styles/common.scss" as *;
 .hero {
-  padding: 4rem 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -54,17 +54,18 @@
     url("../assets/images/background-img/money-bag.svg") no-repeat,
     url("../assets/images/background-img/tabler_currency.svg") no-repeat,
     url("../assets/images/background-img/Star.svg") no-repeat;
-  background-position: 5% 30%, 0% 65%, 25% 75%, 80% 10%, 99% 35%, 85% 75%;
+  background-position: 5% 30%, 0% 65%, 25% 75%, 80% 15%, 99% 35%, 85% 75%;
 
   @media screen and (max-width: $tablet) {
     gap: 1rem;
-    padding: 4rem 1rem;
+    padding: 5rem 1rem;
   }
 
   @media screen and (max-width: $mobile) {
     gap: 0.8rem;
-    padding: 4rem 0;
+    padding: 2rem 0;
     background: none;
+    height: 100%;
   }
   // .hero__container
 
@@ -75,18 +76,17 @@
 
   &__title {
     font-size: 70px;
-    font-weight: 700;
     text-align: center;
-    padding: 5rem 0;
+    padding: 6rem 0 5rem 0;
     max-width: 900px;
     @media screen and (max-width: $tablet) {
+      padding: 4rem 0 3rem 0;
       font-size: 50px;
-      padding: 3rem 0;
     }
 
     @media screen and (max-width: 670px) {
-      font-size: 40px;
       padding: 1rem 0;
+      font-size: 40px;
     }
   }
 
@@ -143,8 +143,5 @@
       border-radius: 10px;
     }
   }
-}
-span {
-  color: $secondaryColor;
 }
 </style>

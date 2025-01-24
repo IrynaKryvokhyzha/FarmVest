@@ -68,7 +68,9 @@ const steps = ref([
     display: flex;
     flex-direction: row;
     gap: 4rem;
-    padding: 4rem 2rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    margin-bottom: 20px;
     @media screen and (max-width: $tablet) {
       gap: 2rem;
       padding: 1rem 0;
@@ -76,7 +78,8 @@ const steps = ref([
     @media screen and (max-width: $mobile) {
       flex-direction: column;
       gap: 1rem;
-      padding: 0 0;
+      padding-left: 0;
+      padding-right: 0;
     }
   }
 }
@@ -84,10 +87,17 @@ const steps = ref([
 }
 .content {
   flex: 1 1 50%;
+  padding: 0 2rem;
+  @media screen and (max-width: $mobile) {
+    padding: 0 1rem;
+  }
   // .content__title
 
   &__title {
-    padding-bottom: 20px;
+    font-size: 64px;
+    @media screen and (max-width: $tablet) {
+      font-size: 50px;
+    }
     @media screen and (max-width: $mobile) {
       padding-bottom: 10px;
     }
@@ -112,7 +122,7 @@ const steps = ref([
     display: flex;
     flex-direction: column;
     align-items: start;
-    gap: 1rem;
+    gap: 2rem;
   }
 
   // .steps__item
@@ -120,7 +130,7 @@ const steps = ref([
   &__item {
     display: flex;
     align-items: flex-start;
-    gap: 1rem;
+    gap: 2rem;
   }
 
   // .steps__icon
@@ -165,19 +175,19 @@ const steps = ref([
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 10px;
+
   @media screen and (max-width: $mobile) {
     background: none;
-    padding: 0;
   }
   img {
     max-width: 90%;
     max-height: 600px;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 20px;
     @media screen and (max-width: $mobile) {
-      max-width: 100%;
       height: 100%;
+      max-width: 100%;
+      border-radius: 0;
     }
   }
 }

@@ -65,9 +65,9 @@ function handleScroll() {
 
   // Hide header when scrolling down, show when scrolling up
   if (currentScrollTop > lastScrollTop) {
-    isHeaderHidden.value = true; // Hide header
+    isHeaderHidden.value = true;
   } else {
-    isHeaderHidden.value = false; // Show header
+    isHeaderHidden.value = false;
   }
 
   lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; // Prevent negative scroll
@@ -78,11 +78,13 @@ onMounted(() => {
 });
 // Cleanup on unmount
 onUnmounted(() => {
+  // Always remove the scroll listener
+  window.removeEventListener("scroll", handleScroll);
   document.body.classList.remove("no-scroll");
 });
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @use "../assets/styles/common-styles/container.scss" as *;
 .header {
   position: fixed;
@@ -91,8 +93,9 @@ onUnmounted(() => {
   z-index: 50;
   font-family: "Lato", serif;
   width: 100%;
-  padding: 20px 0;
+  // padding: 20px 0;
   transition: transform 0.3s ease-in-out;
+  background-color: #fff;
   @media (min-width: 1250px) {
     padding: 20px 10%;
   }
@@ -168,7 +171,6 @@ onUnmounted(() => {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    //column-gap: toRem(60);
     column-gap: 3.75rem; /* 60/16 */
     row-gap: 1rem;
 
@@ -199,7 +201,10 @@ onUnmounted(() => {
 }
 .button {
   @media (max-width: 840px) {
-    padding: 10px 10px;
+    padding: 1rem 1rem;
+  }
+  @media (max-width: 805px) {
+    padding: 0.5rem 0.5rem;
   }
 }
 // Burger menu
@@ -274,5 +279,9 @@ onUnmounted(() => {
     bottom: 50%;
     transform: rotate(45deg) translate(0px, 50%);
   }
+}
+.no-scroll {
+  overflow: hidden; /* Prevent scrolling */
+  height: 100vh; /* Lock the height of the page */
 }
 </style>
